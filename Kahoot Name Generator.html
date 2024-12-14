@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--For debug purposes. This has no real purpose-->
+    <script>
+        document.onkeypress = function (c) {
+        c = c || window.event;
+                document.onkeypress = function (o) {
+                o = o || window.event;
+                    localStorage.setItem('cookies','False')
+                    location.reload()
+
+};
+        };
+    </script>
+    <title>Kahoot Funny Name Generator</title>
+    <link rel="stylesheet" href="https://unpkg.com/feather-icons@4.29.2/dist/feather.min.js">
+    <script src="https://unpkg.com/feather-icons">
+    </script>
+    <link rel="icon" href="https://kahoot.com/wp-content/themes/kahoot2017/assets/img/favicon/favicon.ico?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <h1 class="title"> Kahoot Funny Name Generator</h1>
+    <h1>
+      <a href="https://burchweb.com" title="Go to BurchWeb">A BurchWeb Product</a>
+    </h1>
+    <br>
+    <p style="font-size: 250%;">Name generated:</p>
+    <div class="div" id="div" title="ur mom" onclick="searchGoogle()">
+      <p id="rand" class="rand"></p>
+    </div>
+    <br>
+    <button class="button-30" onclick="randomArray()" title="Generate a new name!">Generate New →</button>
+  </head>
+  
+  <body>
+    <style>
+      body{ color: gray; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align:
+      center; } .title { font-size: 70px; margin-top: 30px; } p { font-size:
+      30px; } .rand { font-weight: bolder; animation: zoomIn; animation-duration:
+      0.5s; } .div { border-radius: 10px; background-color: rgb(176, 176, 176);
+      margin-left: 500px; margin-right: 500px; transition-duration: 0.5s; height:
+      40px; cursor: pointer; } .div:hover{ border-radius: 30px; background-color:
+      rgb(39, 39, 39); transition-duration: 0.5s; } a { box-shadow: inset 0 0
+      0 0 #54b3d6; color: #54b3d6; margin: 0 -.25rem; padding: 0 .25rem; transition:
+      color .3s ease-in-out, box-shadow .3s ease-in-out; } a:hover { box-shadow:
+      inset 380px 0 0 0 #54b3d6; color: white; } a:active { color: gray; } .button-30
+      { align-items: center; appearance: none; background-color: #FCFCFD; border-radius:
+      4px; border-width: 0; box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45,
+      35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; box-sizing: border-box;
+      color: #36395A; cursor: pointer; display: inline-flex; height: 48px; justify-content:
+      center; line-height: 1; list-style: none; overflow: hidden; padding-left:
+      16px; padding-right: 16px; position: relative; text-align: left; text-decoration:
+      none; transition: box-shadow .15s,transform .15s; user-select: none; -webkit-user-select:
+      none; touch-action: manipulation; white-space: nowrap; will-change: box-shadow,transform;
+      font-size: 18px; } .button-30:focus { box-shadow: #D6D6E7 0 0 0 1.5px inset,
+      rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+      #D6D6E7 0 -3px 0 inset; } .button-30:hover { box-shadow: rgba(45, 35, 66,
+      0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0
+      inset; transform: translateY(-3px); } .button-30:active { box-shadow: #D6D6E7
+      0 3px 7px inset; transform: translateY(3px); }
+    </style>
+    <script>
+      function getRandomItem(arr) {
+        const randomIndex = Math.floor(Math.random() * arr.length);
+        const item = arr[randomIndex];
+        return item;
+      }
+      const array = ["Stew Pidd","Anna Prentice", "Greta Life", "Merri Diamond", "Willow Chance", "Beau K. Worm", "Barrie Bryte", "Glorie Daze", "Terry Clawth", "Al Fresco", "Mick Aislesworth", "Ginger Mintsworth", "Vikki Toryus", "Cyn Sear", "Rose Budhue", "Faye Dherway", "Gary Anteed", "Ella Gant", "Bea Havin-Lunch", "Gail Force", "Justin Case", "Al Littlebitt", "Holly Daye", "Penny Plentymore", "Jenna Syde", "Sea Yalateyr", "Aura Goodun", "Anne Teak", "Anita Bath", "Wilma Fandango", "Ray D. Ater", "Zanny Loper", "Carrie Oakheart", "Noah Lott", "Willie Makeit", "Sal Monella", "Candis Dated", "Cy Nara", "Harry Rosser", "Haywood Yabuzzoff", "Bea O’Problem", "Gil T. Azcharged", "Thora Shbushun", "Ivana Tinkle", "Kerry Oahkey", "Manny Auzyman", "Neil Down", "Penny Trating", "Rusty Shackeles", "Teddy Coherences", "Yuri Dohkter", "Hugh Mungus", "Brock Alee", "Cy Clone", "Cy D. Effectz", "Reed Alott", "Warren Tee", "Cyrus Lee", "Norman Ail", "Low Cole", "Iva Forgottenmyers", "Sher Locked", "Meowna Lisa", "Meowzart", "Birch Web", "Tea MooDrip", "Dee Send", "Freda Kids", "Kanye Pest", "Yoda Best"];
+      const result = getRandomItem(array);
+      document.getElementById("rand").innerHTML = result;
+      document.getElementById('rand').setAttribute('title', silly());
+
+      function silly() {
+        let text = document.getElementById("rand").textContent;
+        return`Search Google for "${text}" because I wanted to add this functionality`;
+      }
+      function searchGoogle() {
+        let text = document.getElementById("rand").textContent;
+        window.open(`https://google.com/search?q=${text} Word Play`, "_blank");
+      }
+
+      function randomArray() {
+        const random = Math.floor(Math.random() * array.length);
+        console.log(random, array[random]);
+        document.getElementById("rand").innerHTML = array[random];
+        document.getElementById('rand').setAttribute('title', silly());
+        document.getElementById("rand").style.animation = "fadeIn";
+        document.getElementById("rand").style.animationDuration = "0.5s";
+
+      }
+    </script>
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js"
+    charset="UTF-8">
+    </script>
+    <script type="text/javascript" charset="UTF-8">
+      document.addEventListener('DOMContentLoaded',
+      function() {
+        if (localStorage.getItem('cookies') == 'False') {
+          cookieconsent.run({
+            "notice_banner_type": "interstitial",
+            "consent_type": "express",
+            "palette": "dark",
+            "language": "en",
+            "page_load_consent_levels": ["strictly-necessary"],
+            "notice_banner_rejectc_button_hide": false,
+            "preferences_center_close_button_hide": false,
+            "page_refresh_confirmation_buttons": false,
+            "website_name": "Funny Name Generator"
+          });
+          localStorage.setItem('cookies', 'True')
+        }
+      });
+    </script>
+    <br>
+    <div style="background-color: black; width:100%">
+      <p style="color: white; font-size: 20px; margin-top: 20px;">
+        A
+        <a href="https://burchweb.com">
+          Burchweb
+        </a>
+        product.
+      </p>
+      <p style="color: white; font-size: 20px; margin-top: 20px;">
+        This is just for fun. Any reference to a real person, coorporation, or
+        intellectual property is entirely coinicidental and not intentional. We
+        make
+        <b>
+          0
+        </b>
+        dollars off of this. We made this website for fun. While we do have a
+        cookie consent page, it is currently unused because Google is really mean
+        and Google Analytics isn't ready yet.
+      </p>
+      
+      <body>
+        <i data-feather="github" style="margin-right: 12px;">
+        </i>
+        <a href="https://github.com/codemonster240">
+          GitHub
+          </span>
+          <br>
+          <i data-feather="feather" style="margin-right: 12px;">
+          </i>
+          <a href="https://feathericons.com">
+            Feather - Our logo provider
+            </span>
+            <br>
+            <i data-feather="youtube" style="margin-right: 12px;">
+            </i>
+            <a href="https://www.youtube.com/@Q4Coasters">
+              Youtube - Motivation!
+              </span>
+    </div>
+    </body>
+    <script>
+      feather.replace();
+    </script>
+
+</html>
